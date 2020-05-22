@@ -25,6 +25,7 @@ jobs:
       uses: jsedlace/commit-message-validator@master
       env: # Or as an environment variable
         JIRA_TOKEN: ${{ secrets.jira_token }}
+        GH_TOKEN: ${{ secrets.github_token }}
         JIRA_USER: jiri.sedlacek@wandera.com
         JIRA_HOST: snappli.atlassian.net
 
