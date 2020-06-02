@@ -1,12 +1,13 @@
-name: Git Checks
+name: Git
 
-on: [push]
+on: pull_request
 
 jobs:
   block-fixup:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2.0.0
-    - name: Block Fixup Commit Merge
-      uses: 13rac1/block-fixup-merge-action@v1.1.1
+      - name: Block Autosquash Commits
+        uses: xt0rted/block-autosquash-commits-action@master
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
